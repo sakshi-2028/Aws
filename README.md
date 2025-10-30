@@ -39,7 +39,16 @@ Feature	Description
 📜 Auditing and Logging	All IAM activities are logged for security review and compliance. (e.g., AWS CloudTrail logs IAM actions.)
 
 
-IAM Term: 1)Principle 2)Request 3)Authentication 4)Authorized 5)Action/Operation 6)Resources You can create a new IAM Policy in the Aws management console 3 ways.
+IAM Term:
+1)Principle 
+2)Request
+3)Authentication 
+4)Authorized 
+5)Action/Operation
+6)Resources
+
+
+You can create a new IAM Policy in the Aws management console 3 ways.
 1)json :you can create your own json syntax 
 2)/visual editor : you can constract a new policy from scratch in the visual editor . 
 3)Import: you can import a managed policy within your aws account.
