@@ -11,8 +11,12 @@ Identity and access Management is a web service that helps you securly access to
 
 Limitation of IAM :
 
-IAM user limits is 5000 per aws account.you can add 10 user at one time.
-your are also limited to 1000 IAM roles under AWS account. 3)default limits of managed polices attaced to an IAM role and IAM user is 10. 4)IAM user can be member of 10 group(max). 5)we can assign two access key to an IAM user
+1)IAM user limits is 5000 per aws account.you can add 10 user at one time.
+2)your are also limited to 1000 IAM roles under AWS account. 
+3)default limits of managed polices attaced to an IAM role and IAM user is 10. 
+4)IAM user can be member of 10 group(max).
+5)we can assign two access key to an IAM user
+
 Benefits of IAM :
 
 1)shared access to you aws account.
@@ -21,6 +25,18 @@ Benefits of IAM :
 4)Multifactor Authrntication (MFA).
 5)Identity fedration. :you can allow user who have alrady password elsewhere :facebook google then you can login
 
+⚙️ Key Features of IAM
+Feature	Description
+👤 User Management	Create, manage, and delete user accounts securely. Each user gets unique credentials (username, password, access key).
+👥 Group Management	Organize users into groups to apply common permissions easily.
+🧾 Roles and Permissions	Assign roles to define what actions (like read, write, delete) are allowed on which resources.
+🔑 Policy-Based Access Control	Define policies (JSON documents in AWS) that specify who can do what on which resources.
+🔐 Multi-Factor Authentication (MFA)	Adds an extra layer of security (password + OTP, for example).
+🕵️ Temporary Credentials	Provide short-term access (e.g., for applications or third-party services).
+🌍 Federated Access / SSO (Single Sign-On)	Allow users from external systems (like Google Workspace, Microsoft AD) to access resources securely.
+🧠 Least Privilege Principle	Give users only the permissions necessary to perform their job — nothing more.
+🧩 Integration with Other Services	IAM integrates tightly with services like EC2, S3, Azure Blob, etc., to control access at a granular level.
+📜 Auditing and Logging	All IAM activities are logged for security review and compliance. (e.g., AWS CloudTrail logs IAM actions.)
 
 
 IAM Term: 1)Principle 2)Request 3)Authentication 4)Authorized 5)Action/Operation 6)Resources You can create a new IAM Policy in the Aws management console 3 ways.
