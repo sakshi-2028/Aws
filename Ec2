@@ -1,0 +1,62 @@
+🧠 AWS EC2 – Complete Overview
+🚀 1. What is EC2?
+
+Amazon EC2 (Elastic Compute Cloud) is a web service that provides resizable compute capacity in the cloud.
+It allows you to launch virtual machines (instances) that can run applications, host websites, or process data.
+
+👉 Think of EC2 as your virtual server in the AWS cloud.
+
+⚙️ 2. Key Features of EC2
+Feature	Description
+Elasticity	You can scale capacity up or down easily.
+Pay-as-you-go	You pay only for the compute time you use.
+Variety of Instance Types	Optimized for different workloads (compute, memory, storage, GPU).
+Custom AMIs	You can create and reuse custom machine images.
+Security	Uses key pairs, IAM roles, and security groups.
+Monitoring	Integrated with CloudWatch for metrics and alerts.
+
+🧱 3. EC2 Components
+🧩 a) Amazon Machine Image (AMI)
+A pre-configured template used to create an instance.
+Contains:
+OS (Ubuntu, Windows, etc.)
+Application Server
+Any pre-installed software
+You can use:
+AWS-provided AMIs
+Marketplace AMIs
+Custom AMIs you create yourself
+
+🧩 b) Instance Type
+Defines the hardware configuration (CPU, memory, storage, network).
+Categories:
+General Purpose → t2.micro, t3.medium
+Compute Optimized → c5.large
+Memory Optimized → r5.large
+Storage Optimized → i3.large
+GPU → p3, g4dn
+
+🧩 c) Key Pair
+Used for secure SSH login into instances.
+Public key → stored in AWS
+Private key (.pem) → kept with you
+
+🧩 d) Security Group
+Acts as a virtual firewall controlling inbound/outbound traffic to instances.
+Example rules:
+Inbound: Allow port 22 (SSH), port 80 (HTTP)
+Outbound: Allow all traffic
+
+
+🧩 e) Elastic Block Store (EBS)
+Persistent block storage attached to EC2 instances.
+Data persists even after stopping the instance.
+
+Types: gp3 (SSD), io2 (high IOPS), st1 (HDD).
+
+🧩 f) Elastic IP
+Static public IP that remains the same even if you stop/start the instance.
+
+
+
+
