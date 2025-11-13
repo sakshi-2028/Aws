@@ -1,40 +1,38 @@
 🧠 AWS EC2 – Complete Overview
 🚀 1. What is EC2?
-
 Amazon EC2 (Elastic Compute Cloud) is a web service that provides resizable compute capacity in the cloud.
 It allows you to launch virtual machines (instances) that can run applications, host websites, or process data.
-
 👉 Think of EC2 as your virtual server in the AWS cloud.
 
 ⚙️ 2. Key Features of EC2
 Feature	Description
-Elasticity	You can scale capacity up or down easily.
-Pay-as-you-go	You pay only for the compute time you use.
-Variety of Instance Types	Optimized for different workloads (compute, memory, storage, GPU).
-Custom AMIs	You can create and reuse custom machine images.
-Security	Uses key pairs, IAM roles, and security groups.
-Monitoring	Integrated with CloudWatch for metrics and alerts.
+1)Elasticity	You can scale capacity up or down easily.
+2)Pay-as-you-go	You pay only for the compute time you use.
+3)Variety of Instance Types	Optimized for different workloads (compute, memory, storage, GPU).
+4)Custom AMIs	You can create and reuse custom machine images.
+5)Security	Uses key pairs, IAM roles, and security groups.
+6)Monitoring	Integrated with CloudWatch for metrics and alerts.
 
 🧱 3. EC2 Components
 🧩 a) Amazon Machine Image (AMI)
 A pre-configured template used to create an instance.
 Contains:
-OS (Ubuntu, Windows, etc.)
-Application Server
-Any pre-installed software
-You can use:
-AWS-provided AMIs
-Marketplace AMIs
-Custom AMIs you create yourself
+1)OS (Ubuntu, Windows, etc.)
+2)Application Server
+3)Any pre-installed software
+4)You can use:
+5)AWS-provided AMIs
+6)Marketplace AMIs
+7)Custom AMIs you create yourself
 
 🧩 b) Instance Type
 Defines the hardware configuration (CPU, memory, storage, network).
 Categories:
-General Purpose → t2.micro, t3.medium
-Compute Optimized → c5.large
-Memory Optimized → r5.large
-Storage Optimized → i3.large
-GPU → p3, g4dn
+1)General Purpose → t2.micro, t3.medium
+2)Compute Optimized → c5.large
+3)Memory Optimized → r5.large
+4)Storage Optimized → i3.large
+5)GPU → p3, g4dn
 
 🧩 c) Key Pair
 Used for secure SSH login into instances.
@@ -48,15 +46,78 @@ Inbound: Allow port 22 (SSH), port 80 (HTTP)
 Outbound: Allow all traffic
 
 
-🧩 e) Elastic Block Store (EBS)
-Persistent block storage attached to EC2 instances.
-Data persists even after stopping the instance.
+🧩 EBS (Elastic Block Store)
+Like a hard disk attached to EC2.
+You can detach/attach it to any instance.
 
-Types: gp3 (SSD), io2 (high IOPS), st1 (HDD).
+Types of EBS:
+gp3 – General Purpose SSD
+io2 – High performance SSD
+st1 – Throughput optimized HDD
+sc1 – Cold HDD (low-cost storage)
+💡 Snapshots:
+EBS snapshots are backups stored in S3 — you can restore them anytime.
 
 🧩 f) Elastic IP
 Static public IP that remains the same even if you stop/start the instance.
 
+🧩 Key EC2 Components  :
 
+| Component                       | Description                                                               |
+| ------------------------------- | ------------------------------------------------------------------------- |
+| **Instance**                    | The actual virtual server running in AWS.                                 |
+| **AMI (Amazon Machine Image)**  | A pre-configured template (OS + software) used to launch instances.       |
+| **Instance Type**               | Defines hardware (CPU, Memory, Storage). Example: `t2.micro`, `m5.large`. |
+| **EBS (Elastic Block Store)**   | Persistent disk attached to an instance (like a hard drive).              |
+| **Key Pair**                    | Used for SSH authentication (private + public key).                       |
+| **Security Group**              | Virtual firewall controlling inbound/outbound traffic.                    |
+| **Elastic IP**                  | Static public IP that stays even if you stop/restart the instance.        |
+| **Elastic Load Balancer (ELB)** | Distributes traffic evenly across multiple instances.                     |
+| **Auto Scaling Group (ASG)**    | Automatically increases or decreases instances based on demand.           |
+
+
+⚙️ EC2 Instance Lifecycle :
+
+| State          | Description                    |
+| -------------- | ------------------------------ |
+| **Pending**    | Instance is being launched     |
+| **Running**    | Active and ready to use        |
+| **Stopped**    | Powered off but data preserved |
+| **Terminated** | Deleted permanently            |
+
+
+🧩 Elastic Load Balancer (ELB)
+Distributes incoming network traffic across multiple EC2 instances to ensure high availability and fault tolerance.
+
+🔹 Types of Load Balancers:
+Type	Use Case
+1)Application Load Balancer (ALB)	Works at Layer 7 (HTTP/HTTPS). Routes traffic based on URL/path.
+2)Network Load Balancer (NLB)	Works at Layer 4 (TCP/UDP). Best for high performance/low latency.
+3)Gateway Load Balancer (GLB)	Used for third-party firewalls/security appliances.
+4)Classic Load Balancer (CLB)	Old version; supports Layer 4/7.
+
+💡 Example:
+If you have 3 EC2 web servers, ALB sends traffic evenly between them — if one fails, it automatically routes to healthy ones.
+
+
+🔄 Auto Scaling Group (ASG)
+Automatically adds or removes EC2 instances based on traffic or CPU usage.
+Ensures application availability and cost efficiency.
+Uses CloudWatch alarms (e.g., if CPU > 70%, launch 2 new instances).
+When demand drops, it terminates extra instances.
+
+
+🌐 Elastic IP
+
+A static public IP address you can attach to your instance.
+Helps when you need a fixed IP (for DNS, external apps, etc.).
+Remains constant even if instance restarts.
+
+| Model             | Description                                           |
+| ------------- | ------------------------------------------------- |
+| On-Demand     | Pay per hour/second; no commitment                    |
+| Reserved      | Commit 1 or 3 years for cheaper rates                 |
+| Spot          | Bid for unused capacity (up to 90% cheaper)           |
+| Savings Plans | Commit usage amount ($/hour) instead of instance type |
 
 
