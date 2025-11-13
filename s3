@@ -1,0 +1,92 @@
+🧠 What is Amazon S3?
+Amazon S3 (Simple Storage Service) is an object storage service that lets you store and retrieve any amount of data at any time from anywhere.
+It’s highly scalable, durable (99.999999999% = 11 nines), and secure.
+You store data as objects inside buckets.
+
+
+📦 Key Concepts :
+
+| Term              | Description                                                    |
+| ----------------- | -------------------------------------------------------------- |
+| **Bucket**        | A container that stores objects (like folders in cloud).       |
+| **Object**        | The actual file you upload (data + metadata).                  |
+| **Key**           | Unique name (path) of an object within a bucket.               |
+| **Region**        | Each bucket exists in a single AWS region (e.g., `us-east-1`). |
+| **Versioning**    | Keeps multiple versions of the same object.                    |
+| **Storage Class** | Defines cost, performance, and retrieval time.                 |
+
+
+🧱 How S3 Stores Data
+Each object has:
+Key → name (like images/photo.jpg)
+Value → the actual data
+Metadata → info about the file (e.g., content-type)
+Version ID → if versioning is enabled
+
+
+🔐 S3 Security
+S3 provides multiple ways to control access 👇
+
+1️⃣ IAM Policies
+Grant permissions to users or roles to access S3.
+Example IAM policy for full bucket access:
+
+{
+  "Effect": "Allow",
+  "Action": "s3:*",
+  "Resource": ["arn:aws:s3:::my-bucket", "arn:aws:s3:::my-bucket/*"]
+}
+
+2️⃣ Bucket Policies
+Control access at bucket level (JSON-based, like firewall rules).
+Example public read policy:
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": ["s3:GetObject"],
+      "Resource": ["arn:aws:s3:::my-bucket/*"]
+    }
+  ]
+}
+
+3️⃣ ACL (Access Control List)
+Older method of managing permissions (object-level).
+Still used for legacy integrations.
+
+4️⃣ Block Public Access
+AWS recommends turning this ON by default to prevent data leaks.
+
+
+Used for:
+1)Hosting static websites
+2)Backups
+3)Storing logs or media files
+4)Big data lake storage
+
+
+🎯 Common Interview Questions
+Question	Answer
+1)What is S3?	
+Object storage service to store and retrieve data from anywhere.
+2)Difference between S3 and EBS?
+S3 = object storage, EBS = block storage (attached to EC2).
+3)What is a bucket?	Container for objects (files).
+What is the max size of an S3 object?	5 TB.
+4)How do you secure an S3 bucket?
+IAM, bucket policy, encryption, block public access.
+5)What is versioning?
+Maintains multiple versions of the same object.
+6)What is lifecycle policy?	
+Automatically transitions or deletes data after certain days.
+7)What are S3 storage classes?	
+Standard, Intelligent-Tiering, IA, Glacier, Deep Archive, etc.
+7)What is S3 Transfer Acceleration?
+Speeds uploads using AWS edge locations.
+8)Difference between ACL and Bucket Policy?	
+ACL = object-level, Bucket Policy = bucket-level access control.
+9)How to prevent public access?	
+Enable “Block all public access” and use IAM policies.
