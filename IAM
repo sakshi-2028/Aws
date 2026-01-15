@@ -4,13 +4,19 @@ OR
 Identity and access Management is a web service that helps you securly access to aws resources.You use Iam to control who is authenticated (sign-in) and authorized (has permisiion) to use resources.
 
 Limitation of IAM :
-1)IAM user limits is 5000 per aws account.you can add 10 user at one time. 2)your are also limited to 1000 IAM roles under AWS account. 3)default limits of managed polices attaced to an IAM role and IAM user is 10. 4)IAM user can be member of 10 group(max). 5)we can assign two access key to an IAM user
+1)IAM user limits is 5000 per aws account.you can add 10 user at one time.
+2)your are also limited to 1000 IAM roles under AWS account.
+3)default limits of managed polices attaced to an IAM role and IAM user is 10. 
+4)IAM user can be member of 10 group(max).
+5)we can assign two access key to an IAM user
+6)you are also limited to 300 group aws account.
 
 Benefits of IAM :
 1)shared access to you aws account.
 2)Granular permissions. :you can grant diffrent permission to diffrent people for diffrent resources. 
 3)Secure access to Aws resources of application that run on amazon ec2. 
-4)Multifactor Authrntication (MFA). 5)Identity fedration. :you can allow user who have alrady password elsewhere :facebook google then you can login
+4)Multifactor Authrntication (MFA). 
+5)Identity fedration : you can allow user who have alrady password elsewhere :facebook google then you can login.
 
 ⚙️ Key Features of IAM Feature Description
 👤 User Management Create, manage, and delete user accounts securely. 
@@ -81,6 +87,7 @@ Example Policy:
 📦 Action: What operations (e.g., s3:PutObject)
 🎯 Resource: On which resources
 
+
 5️⃣ Identity Providers (IdP)
 IAM supports federation, letting users from:
 Google Workspace
@@ -89,8 +96,9 @@ SAML-based corporate directory
 access AWS without creating IAM users.
 git 
 
-🚀 Interview-Level Summary
+🚀Interview-Level Summary
 Question	Answer
+
 1)What is IAM?	
 AWS service for secure access management.
 2)What is a Role?
@@ -101,3 +109,6 @@ User = permanent; Role = temporary.
 JSON defining effect, action, resource.
 5)Best practice?
 Use least privilege and enable MFA.
+
+
+
