@@ -1,0 +1,50 @@
+Amazon EBS(Elastic Bloc Store )
+
+Amazon EBS is a block-level storage serviec used mainly with ec2 instances to store data like:
+i)Operating system ii)Aplication files iii)DAtabases  iv)logs
+
+
+key Points:
+Persistent storage -> data remains even if ec2 stops
+works like a virtual hard disk
+Attached to Ec2 instances 
+Automatically replicated within an Availability Zone 
+
+
+Common EBS Volume Types
+gp3/gp2 General purpose(most used)
+io1/io2 high performance databsases
+st1- Throughput optimized (big data)
+sc1 cold storage(low cost)
+
+
+🔒 Features
+Region and AZ specific
+Snapshots (backup to S3)
+Encryption (KMS)
+Resize without downtime
+High availability within AZ
+
+
+EBS	               S3
+Block storage	     Object storage
+Attached to EC2	   Independent
+Low latency	       High durability
+For running apps	 For backups & files
+
+
+🏗️ Real Use
+
+EC2 root volume
+Databases (MySQL, PostgreSQL)
+Application data
+
+
+
+
+
+
+
+
+
+
