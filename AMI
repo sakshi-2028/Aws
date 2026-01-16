@@ -1,0 +1,54 @@
+AMI (Amazon Machine Image)
+
+An AMI is a pre-configured template that contains all the information required to launch an EC2 instance
+(virtual server) on AWS.
+
+In simple terms
+An AMI is like a snapshot/template of a server that contains everything needed to create a virtual machine.
+
+* What an AMI  includes
+1)Operating System- Amazon linux, ubuntu , window , etc
+2)Preinstalled software - web server , Docker ,Java , PHP etc
+3)Application code & code & config -your backend ,enviroment setup.
+4)Permissions - which AWS accounts can use this AMI
+5)Root volume snapshot - EBS snapshot of the disk.
+
+* why AMI IS important 
+Launch multiple identical EC2 instances
+Faster recovery (recreate server in minutes)
+Used in Auto Scaling Groups
+Useful for backup and migration
+Ensures consistent environments (dev / staging / prod)
+
+* Types of AMIs
+AWS Managed AMIs – Amazon Linux, Ubuntu, Windows
+Marketplace AMIs – paid or free images from vendors
+Custom AMIs – created by you from an EC2 instance
+
+* AMI lifecycle (common flow)
+Launch EC2
+Install software & configure app
+Create AMI from that instance
+Use AMI to launch new EC2s or scale
+
+
+* Key points to remember
+AMIs are region-specific
+AMIs are immutable (can’t be edited, only recreated)
+Backed by EBS or Instance Store
+Billing applies for EBS snapshots, not the AMI itself
+
+
+| AMI                    | Snapshot                |
+| ---------------------- | ----------------------- |
+| Blueprint for EC2      | Backup of EBS volume    |
+| Used to launch EC2     | Used to restore volume  |
+| Contains OS + software | Contains disk data only |
+
+
+How do you secure AMIs?
+Patch OS regularly
+Remove hardcoded secrets
+Use IAM roles (no keys)
+Encrypt EBS volumes
+Use Golden AMIs
